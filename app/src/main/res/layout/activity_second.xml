@@ -29,4 +29,21 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
+    <EditText
+            android:lines="1"
+            android:inputType="text"
+            android:id="@+id/et_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    <Button
+            android:id="@+id/btn_0"
+            android:text="Set Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    <Button
+            android:id="@+id/btn_1"
+            android:text="Show Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
 </LinearLayout>

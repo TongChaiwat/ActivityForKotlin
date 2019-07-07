@@ -2,9 +2,14 @@ package com.example.activityforkotlin
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
+import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_second.*
 
 class SecondActivity : AppCompatActivity() {
+
+    var text = "blank"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,5 +37,23 @@ class SecondActivity : AppCompatActivity() {
         tv_2.text = y
         tv_3.text = z.name + ":" + z.age + ":" + z.isMarred
 
+        // Test Instance State
+        btn_0.setOnClickListener {
+            text = et_1.text.toString()
+        }
+        btn_1.setOnClickListener {
+            Toast.makeText(this, text, Toast.LENGTH_SHORT).show()
+        }
+
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putString("text", text)
+    }
+
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+        super.onRestoreInstanceState(savedInstanceState)
+        text = savedInstanceState.getString("text", "default")
     }
 }
